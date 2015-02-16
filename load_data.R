@@ -90,17 +90,38 @@ unzip.activity.train <- function(){
     activity_vector <- read.table(unz("./data/project.zip", "UCI HAR Dataset/train/y_train.txt"), header=F,sep="")
     activity_vector  <- tbl_df(activity_vector )
     colnames(activity_vector) <- c("activity_code")
-    activity_vector    
-    
+    activity_vector <- mutate(activity_vector, activity = activity$Name[activity_code])
+    activity_vector
+
 }
 unzip.activity.test <- function(){
     activity_vector <- read.table(unz("./data/project.zip", "UCI HAR Dataset/test/y_test.txt"), header=F,sep="")
     activity_vector  <- tbl_df(activity_vector )
     colnames(activity_vector) <- c("activity_code")
+    activity_vector <- mutate(activity_vector, activity = activity$Name[activity_code])
     activity_vector     
     
 }
 
+bind.subject.activity <- function(){
+    large_work_data_set <- 
+        bind_cols(select(activity_train, activity), train_data)
+    large_work_data_set <-
+        bind_cols(subject_train, large_work_data_set)
+    large_work_data_set <- tbl_df(large_work_data_set )    
+    large_work_data_set
+    
+}
 
+select.mean.std.train <- function(){
+    selector_vector  <- 
+        c(
+            column_names[grep("subject_ID" ,column_names)],
+            column_names[grep("^act",column_names)],
+            column_names[grep(".mean.",column_names)],
+            column_names[grep(".std.",column_names)]
+        )
+     
+        select(train_subject_activity, one_of(selector_vector))    
 
-
+}

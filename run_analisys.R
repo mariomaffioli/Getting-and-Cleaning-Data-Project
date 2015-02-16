@@ -12,11 +12,10 @@ library(dplyr)
 # source auxiliary scripts
 source("load_data.R")
 
-
 # load zip file to local disk
 load.zip.file() 
 
-# Unazip files and create data frames
+# Unzip files and create data frames
 activity <- unzip.activity()
 column_names <- unzip.features()
 subject_train <- unzip.subject.train()
@@ -25,5 +24,10 @@ train_data <- unzip.train.data(column_names)
 test_data <- unzip.test.data(column_names)
 activity_train <- unzip.activity.train()
 activity_test <- unzip.activity.test()
+
+# Process train data
+train_subject_activity <- bind.subject.activity()
+column_names <- colnames(train_subject_activity)
+train_mean_std <- select.mean.std.train()
 
 
