@@ -26,8 +26,21 @@ activity_train <- unzip.activity.train()
 activity_test <- unzip.activity.test()
 
 # Process train data
-train_subject_activity <- bind.subject.activity()
+train_subject_activity <- bind.subject.activity.train()
 column_names <- colnames(train_subject_activity)
 train_mean_std <- select.mean.std.train()
 
+# Process train data
+test_subject_activity <- bind.subject.activity.test()
+test_mean_std <- select.mean.std.test()
+
+# merge train and test data
+full_mean_std <- merge.train.test.data()
+
+# create tidy_data set
+tidy_data_set <- create.tidy.data.set()
+
+# Write the tidy_data set out to a file
+write.table(tidy_data_set, file="tidy_data.txt", 
+            row.names=FALSE) 
 
