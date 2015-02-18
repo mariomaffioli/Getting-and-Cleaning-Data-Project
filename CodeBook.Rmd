@@ -1,0 +1,34 @@
+---
+title: "CodeBook"
+author: "Mario Maffioli"
+date: "Wednesday, February 18, 2015"
+output: html_document
+---
+
+This 'Code Book does not describe the original column names since those are already documented in the downloaded files.
+
+It does document each of the eight files used in processing by the main script 'run_analysis.R'and the column names included in the final producto file 'tidy_data.txt'.
+
+###activity data_frame
+
+fields:
+
+    1. 'Code' integer code for the activity, ranges from 1 to 6
+    
+    2. 'Name' Names for each of the six activities
+        WALKING
+        WALKING_UPSTAIRS
+        WALKING_DOWNSTAIRS
+        SITTING
+        STANDING
+        LAYING 
+        
+###subject_train data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+
+        
+        

@@ -1,0 +1,37 @@
+---
+title: "README"
+author: "Mario Maffioli"
+date: "Wednesday, February 18, 2015"
+output: html_document
+---
+
+The three scripts in this repo (run_analysis.R, load_data.R and process_data.R) implement the logic required to carry out the  five tasks specified for the assignment:
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+At the script level the scripts are designed so that the 'run_analysis.R' script is the main script. It sources the other two  scripts 'load_data.R' and 'process_data.R' that contain a number of helper functions that carry out must of he data loading, munging, and tiding up necessary to create the 'tidy_data.txt' file, which represents the final product for this assigment.
+
+The helper functions included in the 'load_data.R' script download the original project zipped file and save it to local disk. Another eight helper functions each unzip a file and return it as an data_frame object to be stored as a variable by the 'run_analysis.R' script. There are two additonal special functions: 'remove.duplicate.names' and 'remove.duplicate.columns' which are used by the 'unzip.features', the 'unzip.train.data' and the 'unzip.test.data' functions to eliminate columns with duplicate names contained in the original data.
+
+The 'process_data.R' script contains six helper functions: four of these ('bind.subject.activity.train', 'select.mean.std.train', 'bind.subject.activity.test' and 'select.mean.std.test') are used to augment the 'train' and 'test' data sets with 'subject_ID' and 'activity_code' columns and to select from the augmented data_frames  only the 79 columns with 'mean' or 'std' in their names plus the two columns with the subject and activity code, giving us data frames with a total of 81 columns.
+
+The remaining two helper functions in the 'process_data.R script' ('merge.train.test.data' and 'create.tidy.data.set') merge the train and test data frames and agregate the resulting data set by subject and activity to obtain the required 'tidy_data.txt table'.
+
+Once the helper functions are defined, the main script 'run_analysis.R' carries out the following sequence of processing tasks:
+
+1. Clears the working environment
+2. Loads the 'dplyr' library
+3. Sources the two scripts with the helper functions
+4. Loads the original zip file and stores it on the local disk
+5. Unzips each of the required eight files and stores each of them in a data_frame, ready for further processing
+6. Processes the train data set
+7. Processes the test data set
+8. Merges the train and test data sets
+9. Generates the final product by aggregation
+10. Stores the 'tidy_data.txt' file to disk
+
+
