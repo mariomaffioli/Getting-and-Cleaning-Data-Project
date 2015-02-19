@@ -5,7 +5,7 @@
 
 
 # Let us first make sure that the environment is clear
-rm(list=ls())
+rm(list=ls())  
 
 # load libraries
 library(dplyr)

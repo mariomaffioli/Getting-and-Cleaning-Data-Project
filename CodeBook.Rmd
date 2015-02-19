@@ -119,8 +119,8 @@ fields:
     
     The remaining 79 columns are the average value of the corresponding columns in the 'full_mean_std' data_frame summarized by 'subject_ID' and 'activity'.
     
- ###tidy_data.txt file
+###tidy_data.txt file
 
-fields:   
+fields:     
      
 The fields in this file correspond one-for-one with the columns in the 'tidy_data_set' data_frame. It contains a header row and its fields are delimited by a space character. 

@@ -72,7 +72,7 @@ img {
 <div id="activity-data_frame" class="section level3">
 <h3>activity data_frame</h3>
 <p>fields:</p>
-<pre><code>1. 'Code' integer code forthe activity, ranges from 1 to 6
+<pre><code>1. 'Code' integer code for the activity, ranges from 1 to 6
 
 2. 'Name' Names for each of the six activities
     WALKING
@@ -80,7 +80,100 @@ img {
     WALKING_DOWNSTAIRS
     SITTING
     STANDING
-    LAYING </code></pre>
+    LAYING 
+    </code></pre>
+</div>
+<div id="subject_train-data_frame" class="section level3">
+<h3>subject_train data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30</code></pre>
+</div>
+<div id="subject_test-data_frame" class="section level3">
+<h3>subject_test data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    </code></pre>
+</div>
+<div id="train_data-data_frame" class="section level3">
+<h3>train_data data_frame</h3>
+<p>fields:</p>
+<pre><code>This data frame contains 435 of the the columns in the original 'X_train.txt' data file. The mising 126 columns were eliminated because they have duplicate names and do not contain mean or standard deviadion information and so are not required for the assignment.</code></pre>
+</div>
+<div id="test_data-data_frame" class="section level3">
+<h3>test_data data_frame</h3>
+<p>fields:</p>
+<pre><code>This data frame contains 435 of the the columns in the original 'X_test.txt' data file. The mising 126 columns were eliminated because they have duplicate names and do not contain mean or standard deviadion information and so are not required for the assignment.    
+    </code></pre>
+</div>
+<div id="activity_train-data_frame" class="section level3">
+<h3>activity_train data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'activity_code' integer code that indicates the code for each of the observations in the 'train_data' data frame: ranges from 1 to 6
+
+2. 'activity' the name of the activity extracted from the 'activity' data frame and added as an extra column to the original data unzipped from the 'y_train.txt' file</code></pre>
+</div>
+<div id="activity_test-data_frame" class="section level3">
+<h3>activity_test data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'activity_code' integer code that indicates the code for each of the observations in the 'test_data' data frame: ranges from 1 to 6
+
+2. 'activity' the name of the activity extracted from the 'activity' data frame and added as an extra column to the original data unzipped from the 'y_test.txt' file</code></pre>
+</div>
+<div id="train_subject_activity-data_frame" class="section level3">
+<h3>train_subject_activity data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+
+2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+
+The remaining 435 columns are added from the 'train_data' data_frame </code></pre>
+</div>
+<div id="train_mean_std-data_frame" class="section level3">
+<h3>train_mean_std data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+
+2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+
+The remaining 79 columns are the variables from the 'train_subject_activity' data_frame that contained the term 'mean' or 'std' in their names.</code></pre>
+</div>
+<div id="test_subject_activity-data_frame" class="section level3">
+<h3>test_subject_activity data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+
+2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+
+The remaining 435 columns are added from the 'test_data' data_frame </code></pre>
+</div>
+<div id="test_mean_std-data_frame" class="section level3">
+<h3>test_mean_std data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+
+2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+
+The remaining 79 columns are the variables from the 'test_subject_activity' data_frame that contained the term 'mean' or 'std' in their names.
+ </code></pre>
+</div>
+<div id="full_mean_std-data_frame" class="section level3">
+<h3>full_mean_std data_frame</h3>
+<p>fields:</p>
+<p>The columns in this data_frame are the same as those in either the ‘train_mean_std’ or the ‘test_mean_std’ data_frames, except that it contains the rows from both those data_frames.</p>
+</div>
+<div id="tidy_data_set-data_frame" class="section level3">
+<h3>tidy_data_set data_frame</h3>
+<p>fields:</p>
+<pre><code>1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+
+2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+
+The remaining 79 columns are the average value of the corresponding columns in the 'full_mean_std' data_frame summarized by 'subject_ID' and 'activity'.</code></pre>
+</div>
+<div id="tidy_data.txt-file" class="section level3">
+<h3>tidy_data.txt file</h3>
+<p>fields:</p>
+<p>The fields in this file correspond one-for-one with the columns in the ‘tidy_data_set’ data_frame. It contains a header row and its fields are delimited by a space character.</p>
 </div>
 
 
