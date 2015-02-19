@@ -29,6 +29,98 @@ fields:
 
     1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
     
+###subject_test data_frame
 
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
         
+###train_data data_frame
+
+fields:
+
+    This data frame contains 435 of the the columns in the original 'X_train.txt' data file. The mising 126 columns were eliminated because they have duplicate names and do not contain mean or standard deviadion information and so are not required for the assignment.
+    
+###test_data data_frame
+
+fields:
+
+    This data frame contains 435 of the the columns in the original 'X_test.txt' data file. The mising 126 columns were eliminated because they have duplicate names and do not contain mean or standard deviadion information and so are not required for the assignment.    
         
+###activity_train data_frame
+
+fields:
+
+    1. 'activity_code' integer code that indicates the code for each of the observations in the 'train_data' data frame: ranges from 1 to 6
+    
+    2. 'activity' the name of the activity extracted from the 'activity' data frame and added as an extra column to the original data unzipped from the 'y_train.txt' file
+
+###activity_test data_frame
+
+fields:
+
+    1. 'activity_code' integer code that indicates the code for each of the observations in the 'test_data' data frame: ranges from 1 to 6
+    
+    2. 'activity' the name of the activity extracted from the 'activity' data frame and added as an extra column to the original data unzipped from the 'y_test.txt' file
+    
+###train_subject_activity data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+    2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+    
+    The remaining 435 columns are added from the 'train_data' data_frame 
+    
+###train_mean_std data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+    2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+    
+    The remaining 79 columns are the variables from the 'train_subject_activity' data_frame that contained the term 'mean' or 'std' in their names.
+    
+###test_subject_activity data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+    2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+    
+    The remaining 435 columns are added from the 'test_data' data_frame 
+    
+###test_mean_std data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+    2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+    
+    The remaining 79 columns are the variables from the 'test_subject_activity' data_frame that contained the term 'mean' or 'std' in their names.
+     
+###full_mean_std data_frame
+
+fields:
+
+The columns in this data_frame are the same as those in either the 'train_mean_std' or the 'test_mean_std' data_frames, except that it contains the rows from both those data_frames.
+
+###tidy_data_set data_frame
+
+fields:
+
+    1. 'subject_ID' integer code that identifies each experimental subject: ranges from 1 to 30
+    
+    2. 'activity' the name of the activity extracted from the 'activity_train' data_frame 
+    
+    The remaining 79 columns are the average value of the corresponding columns in the 'full_mean_std' data_frame summarized by 'subject_ID' and 'activity'.
+    
+ ###tidy_data.txt file
+
+fields:   
+     
+The fields in this file correspond one-for-one with the columns in the 'tidy_data_set' data_frame. It contains a header row and its fields are delimited by a space character. 
